@@ -31,7 +31,7 @@ A robust end-to-end pipeline with state management and database logging.
 
 ### 3. Real-Time Scheduling Success
 The ultimate goal achieved: A confirmed appointment automatically placed in the clinic's Google Calendar without human intervention.
-![Calendar Confirmation](img/chatbot_appointment confirmed.jpg)
+![Calendar Confirmation](img/chatbot_appointment_confirmed.jpg)
 
 ## 🚀 The "Python-Core" Roadmap
 While this n8n-based version is fully functional for MVP stages, the architecture is designed to migrate its "brain" to a dedicated **FastAPI + LangGraph** microservice. This will allow for more complex branching logic and industrial-scale concurrency as the SaaS scales.
