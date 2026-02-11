@@ -23,15 +23,15 @@ This repository showcases a production-ready **AI Agent** designed to qualify pa
 
 ### 1. Conversational AI Logic
 The agent follows a strict medical protocol: Greet -> Qualify Pain/Need -> Check Availability -> Confirm Identity -> Finalize Booking.
-![WhatsApp AI Conversation](img/whatsapp_chatbot_conversation.jpg)
+![WhatsApp AI Conversation](img/whatsapp_chatbot_conversation.png)
 
 ### 2. Full Workflow Architecture
 A robust end-to-end pipeline with state management and database logging.
-![n8n Workflow Mastery](img/n8n_chatbot_workflow.jpg)
+![n8n Workflow Mastery](img/n8n_chatbot_workflow.png)
 
 ### 3. Real-Time Scheduling Success
 The ultimate goal achieved: A confirmed appointment automatically placed in the clinic's Google Calendar without human intervention.
-![Calendar Confirmation](img/chatbot_appointment_confirmed.jpg)
+![Calendar Confirmation](img/chatbot_appointment_confirmed.png)
 
 ## 🚀 The "Python-Core" Roadmap
 While this n8n-based version is fully functional for MVP stages, the architecture is designed to migrate its "brain" to a dedicated **FastAPI + LangGraph** microservice. This will allow for more complex branching logic and industrial-scale concurrency as the SaaS scales.
