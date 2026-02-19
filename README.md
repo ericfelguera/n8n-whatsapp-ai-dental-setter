@@ -43,7 +43,7 @@
 ### Live Demo
 | Conversation 1/2 | Conversation 2/2 | GCal Appointment |
 | :---: | :---: | :---: |
-| <img src="img /whatsapp_conversation1.png" width="300"> | <img src="img /whatsapp_conversation2.png" width="300"> | <img src="img /gcal_appointment.png" width="300"> |
+| <img src="img/whatsapp_conversation1.png" width="300"> | <img src="img/whatsapp_conversation2.png" width="300"> | <img src="img/gcal_appointment.png" width="300"> |
 
 ---
 
