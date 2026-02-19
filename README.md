@@ -18,7 +18,7 @@
 ### Live Demo
 | Conversation 1/2 | Conversation 2/2 | GCal Appointment |
 | :---: | :---: | :---: |
-| <img src="img/whatsapp_conversation1.png" width="200"> | <img src="img/whatsapp_conversation2.png" width="200"> | <img src="img/gcal_appointment.png" width="200"> |
+| <img src="img /whatsapp_conversation1.png" width="200"> | <img src="img /whatsapp_conversation2.png" width="200"> | <img src="img /gcal_appointment.png" width="200"> |
 
 ---
 
@@ -103,7 +103,7 @@ n8n (Current) → FastAPI + LangGraph (Target)
 
 ## 📸 Workflow Deep Dive
 
-![n8n Workflow Mastery](img/chatbot_full_workflow.png)
+![n8n Workflow Mastery](img /chatbot_full_workflow.png)
 
 **Key Flow Stages:**
 1. **Webhook Reception** → EvolutionAPI receives WhatsApp message
