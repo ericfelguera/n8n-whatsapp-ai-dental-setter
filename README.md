@@ -2,11 +2,36 @@
 
 > **The Problem**: 60% of dental leads go cold within 5 minutes. This AI Agent responds in <10 seconds, qualifies patients, and books appointments autonomously via WhatsApp—converting "Lead Zombies" into confirmed revenue.
 
-## 📊 Business Impact
-- **Response Time**: <10 seconds (vs. 2-4 hours industry average)
-- **Conversion Rate**: [TU MÉTRICA] leads → confirmed appointments
-- **Availability**: 24/7, including weekends and holidays
-- **Human Time Saved**: [ESTIMACIÓN] hours/week
+
+## 💡 Use Case: Typical Dental Clinic Scenario
+
+**Clinic Profile:**
+- 3 dentists, 1 receptionist
+- ~80 WhatsApp inquiries/month
+- Open Mon-Fri 9AM-6PM, Sat 9AM-2PM
+
+**Current Pain Points:**
+- 40% of leads arrive outside business hours → lost revenue
+- Receptionist spends 12+ hours/week answering repetitive FAQs
+- Follow-ups for "I'll think about it" leads never happen
+
+**How This AI Agent Helps:**
+
+| Task | Manual (Before) | Automated (After) |
+|------|----------------|-------------------|
+| Respond to inquiry | 2-4 hours | <10 seconds |
+| Check calendar availability | 3-5 back-and-forth messages | 1 AI tool call |
+| Book appointment | 5+ minutes per booking | 30 seconds automated |
+| Answer FAQ (prices, insurance) | Receptionist interruption | Instant RAG retrieval |
+| Follow up with warm leads | Rarely done | Automated reminders (roadmap) |
+
+**Conservative Estimate:**
+- If this captures just 20% of after-hours leads → ~16 extra appointments/month
+- At $100 average treatment value → $1,600 additional monthly revenue
+- Receptionist time freed: ~10 hours/week for higher-value tasks
+
+
+**Current Status:** System fully operational, seeking pilot clinic to validate real-world metrics.
 
 ---
 
@@ -18,7 +43,7 @@
 ### Live Demo
 | Conversation 1/2 | Conversation 2/2 | GCal Appointment |
 | :---: | :---: | :---: |
-| <img src="img /whatsapp_conversation1.png" width="200"> | <img src="img /whatsapp_conversation2.png" width="200"> | <img src="img /gcal_appointment.png" width="200"> |
+| <img src="img /whatsapp_conversation1.png" width="300"> | <img src="img /whatsapp_conversation2.png" width="300"> | <img src="img /gcal_appointment.png" width="300"> |
 
 ---
 
@@ -46,7 +71,7 @@ The AI doesn't just chat—it *acts*:
 - `confirmar_cita` → Books appointment + sends confirmation
 - `buscar_informacion_clinica` → RAG over clinic FAQ (Postgres pgvector)
 
-**Model**: Gemini 2.0 Flash (chosen for speed + tool use reliability)
+**Model**: ChatGPT 4.1 mini (chosen for speed + tool use reliability)
 
 ### 4. Smart Scheduling Logic
 - Parses natural language: "mañana por la tarde" → 15:00-19:00 range
@@ -60,7 +85,7 @@ The AI doesn't just chat—it *acts*:
 | Layer | Technology | Why This Choice |
 |-------|-----------|-----------------|
 | **Orchestration** | n8n | Rapid prototyping + visual debugging |
-| **AI Brain** | Gemini 2.0 Flash | Best speed/cost for function calling |
+| **AI Brain** | ChatGPT 4.1 mini | Excellent speed/cost for function calling |
 | **Memory** | PostgreSQL + pgvector | Structured data + semantic search |
 | **WhatsApp Bridge** | EvolutionAPI | Official API support + webhooks |
 | **Calendar** | Google Calendar API | Direct integration, no middleware |
@@ -110,7 +135,7 @@ n8n (Current) → FastAPI + LangGraph (Target)
 2. **Lead Detection** → Check if phone exists in DB
 3. **Context Loading** → Retrieve conversation history + memory
 4. **Pause Check** → Verify human hasn't taken over
-5. **AI Processing** → Gemini decides: chat, search FAQ, or check calendar
+5. **AI Processing** → ChatGPT decides: chat, search FAQ, or check calendar
 6. **Response Routing** → WhatsApp reply or calendar booking
 7. **State Persistence** → Save updated conversation state
 
@@ -128,29 +153,4 @@ n8n (Current) → FastAPI + LangGraph (Target)
 ## 📬 Want to Discuss?
 This system is production-ready for clinics handling 50-500 leads/month. For enterprise-scale deployments, I'm building the FastAPI version with advanced routing and analytics.
 
-[LinkedIn] | [Email] | [Calendar Booking Tool (dogfooding my own AI 😄)]
-
-
-
-
-
-
-
-
-### 1. Conversational AI Logic
-The agent follows a strict medical protocol: Greet -> Qualify Pain/Need -> Check Availability -> Confirm Identity -> Finalize Booking.
-![WhatsApp AI Conversation](img/whatsapp_chatbot_conversation.png)
-
-### 2. Full Workflow Architecture
-A robust end-to-end pipeline with state management and database logging.
-![n8n Workflow Mastery](img/n8n_chatbot_workflow.png)
-
-### 3. Real-Time Scheduling Success
-The ultimate goal achieved: A confirmed appointment automatically placed in the clinic's Google Calendar without human intervention.
-![Calendar Confirmation](img/chatbot_appointment_confirmed.png)
-
-## 🚀 The "Python-Core" Roadmap
-While this n8n-based version is fully functional for MVP stages, the architecture is designed to migrate its "brain" to a dedicated **FastAPI + LangGraph** microservice. This will allow for more complex branching logic and industrial-scale concurrency as the SaaS scales.
-
----
-*Note: This system solves the "Lead Zombie" problem by responding in <10 seconds, ensuring no patient inquiry goes unanswered.*
+[LinkedIn](https://www.linkedin.com/in/eric-felguera/) | [Email](mailto:eric.felguera@gmail.com) | [Calendar Booking Tool (dogfooding my own AI 😄)]
